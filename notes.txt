@@ -1,0 +1,62 @@
+project
+- display timer
+- show animation
+
+
+pseudo code
+- event listener to click start button
+- draw full border around timer
+- start counting down
+- update border each time counts down
+- update text each time it counts down
+- once count down
+  - reset border
+  - reset count down
+
+notes
+- code basically listens for an event. 
+then other code execute for something else to happen
+- can implement so that one block of code can execute for some event
+- instead of lines that alternate code, we're aiming for 1 solid block of code
+  js class around DOM elements
+- class Timer => start(), pause(), onDurationChange(), tick()
+  no animation, just timer. class will have constructor function
+- constructor will have duration input, start button and pause button
+
+- value of this inside arrow function is first valid line above arrow function
+- value of this for call/apply/bind is whatever is the first argument
+- value of this for other cases is whats left of the "."
+
+- can make sure value of this is always the same with arrow function. 
+  console.log() within the class
+- bind works too. put it in the eventlistener
+
+- undate timer with tick() method
+- store time remaining in input element. old way but learning purpose
+- new way is to store in js code.
+
+- can get a function and set a function, get/set keyword
+- hidden away complexity
+
+- next is animation border. will set up something to watch for events to occur
+
+- want callback parameter to be optional
+
+- goal is to have animated bold border, depleting
+- need more than CSS borders to do animation
+- SVG scalable vector graphics
+  Needs x and y axis as coordinates. Nees origin too.
+  can put stuff in SVG; draw anything in it.
+  next will draw a line on a clear circle.
+
+- SVG circle => fill and stroke
+
+- use negative offset to get clockwise direction
+- rotate entire circle counter-clockwise 90 degrees, to start from top of circle
+- next pass in values, instead of hardcoding them
+
+- math: start: dasharray = perimeter, dashoffset = 0
+  end: dasharray = perimeter, dashoffset = -1 * perimeter
+  offset = (perimeter * timeRemaining) / totalDuration - perimeter
+
+- icons using Font Awesome library
